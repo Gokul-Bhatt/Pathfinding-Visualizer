@@ -1,0 +1,26 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 4rem;
+    border-bottom: 3px solid rgb(253, 4, 4);
+    background-color:#34495E;
+    /* border: none; */
+    /* box-shadow: 0 2px 0 rgba(235, 33, 33, 0.3); */
+}
+.btn{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 2rem;
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    border-color: black;
+}
+.drop{
+    width: 8rem;
+    height: 2rem;
+}
+.path{
+    color: white;
+}

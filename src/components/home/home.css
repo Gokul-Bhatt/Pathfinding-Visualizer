@@ -1,0 +1,30 @@
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.item{
+    display: flex;
+    gap: 1rem;
+}
+
+.grid {
+  border-collapse: collapse;
+}
+
+/* .unvisited2 {
+  width: 25px;
+  height: 25px;
+  background-color: rgb(223, 57, 218);
+} */
+.unvisited1{
+  width: 25px;
+  height: 25px;
+  background-color: rgb(5, 62, 112);
+}
+.unvisited3{
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 234, 0);
+}
