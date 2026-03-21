@@ -4,7 +4,7 @@ import "./navbar.css"
 export const navbar = () => {
   return (
     <div className="navbar">
-      <h1 className="path">Pathfinding Visualizer</h1>
+      <h1 className="topheading">Pathfinding Visualizer</h1>
       <div className="dropdown-container">
         <select className="drop">
           <option>Select Algorithm</option>

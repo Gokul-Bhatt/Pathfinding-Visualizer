@@ -11,6 +11,8 @@ const Grid = ({startNode,setStartNode,targetNode,setTargetNode}) => {
   // const [targetNode, setTargetNode] = useState(null);
 
   const handleCellClick = (row, col) => {
+    console.log("CLICKED:", row, col);
+    
     if (!startNode) {
       setStartNode({ row, col });
       return;
@@ -34,7 +36,6 @@ const Grid = ({startNode,setStartNode,targetNode,setTargetNode}) => {
         targetNode &&
         targetNode.row === row &&
         targetNode.col === col;
-
       let cellClass = "unvisited";
       if (isStart) cellClass = "start";
       else if (isTarget) cellClass = "target";

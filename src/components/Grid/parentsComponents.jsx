@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-// import Grid from "./Grid";
 import Grid from "./grid";
-import Home from "./Home";
-import { dijkstra } from "./dijkstra";
+import Home from "../home/home";
+import { dijkstra } from "../Algo/dijkstra";
 
 const ROWS = 20;
 const COLS = 46;
@@ -17,20 +16,39 @@ const ParentsComponents = () => {
       return;
     }
 
-    const path = dijkstra(startNode, targetNode, ROWS, COLS);
-    animatePath(path);
+     const { visitedNodes, path } = dijkstra(startNode, targetNode, ROWS, COLS);
+
+  animateVisited(visitedNodes, path);
   };
 
-  const animatePath = (path) => {
-    path.forEach((node, index) => {
-      setTimeout(() => {
-        const el = document.getElementById(
-          `${node.row}-${node.col}`
-        );
-        if (el) el.className = "path";
-      }, index * 30);
-    });
-  };
+const animateVisited = (visitedNodes, path) => {
+  visitedNodes.forEach((node, index) => {
+    setTimeout(() => {
+      const el = document.getElementById(`${node.row}-${node.col}`);
+
+      if (el && el.className !== "start" && el.className !== "target") {
+        el.className = "visited";
+      }
+      if (index === visitedNodes.length - 1) {
+        animatePath(path);
+      }
+
+    }, index * 10);
+  });
+};
+
+ const animatePath = (path) => {
+  path.forEach((node, index) => {
+    setTimeout(() => {
+      const el = document.getElementById(`${node.row}-${node.col}`);
+
+      if (el && el.className !== "start" && el.className !== "target") {
+        el.className = "path";
+      }
+
+    }, index * 30);
+  });
+};
 
   return (
     <>
