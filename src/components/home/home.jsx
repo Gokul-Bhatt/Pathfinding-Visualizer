@@ -30,7 +30,6 @@ export const home = () => {
             <tbody>
               <tr>
                  <td id="0-0" className="unvisited1"></td>
-                  {/* <td id="0-1" className="unvisited2"></td> */}
             </tr>
             </tbody>
         </table>
