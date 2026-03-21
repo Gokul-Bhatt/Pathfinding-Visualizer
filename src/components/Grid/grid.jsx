@@ -6,9 +6,9 @@ import { useState } from "react";
 const ROWS = 20;
 const COLS = 46;
 
-const grid = () => {
-  const [startNode, setStartNode] = useState(null);
-  const [targetNode, setTargetNode] = useState(null);
+const Grid = ({startNode,setStartNode,targetNode,setTargetNode}) => {
+  // const [startNode, setStartNode] = useState(null);
+  // const [targetNode, setTargetNode] = useState(null);
 
   const handleCellClick = (row, col) => {
     if (!startNode) {
@@ -63,4 +63,4 @@ const grid = () => {
   );
 };
 
-export default grid;
+export default Grid;
