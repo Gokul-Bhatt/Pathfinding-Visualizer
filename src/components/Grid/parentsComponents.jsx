@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Grid from "./grid";
 import Home from "../home/home";
 import { dijkstra } from "../Algo/dijkstra";
+import { bfs } from "../Algo/bfs";
 
 const ROWS = 20;
 const COLS = 46;
@@ -21,6 +22,15 @@ const ParentsComponents = () => {
   animateVisited(visitedNodes, path);
   };
 
+  const runBfs = ()=>{
+    if(!startNode || !targetNode){
+      alert("select start and target");
+      return;
+    }
+    const {visitedNodes,path} = bfs(startNode, targetNode, ROWS , COLS);
+    animateVisited(visitedNodes,path);
+  }
+  
 const animateVisited = (visitedNodes, path) => {
   visitedNodes.forEach((node, index) => {
     setTimeout(() => {
