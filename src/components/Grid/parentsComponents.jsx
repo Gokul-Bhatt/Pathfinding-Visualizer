@@ -3,6 +3,7 @@ import Grid from "./grid";
 import Home from "../home/home";
 import { dijkstra } from "../Algo/dijkstra";
 import { bfs } from "../Algo/bfs";
+import {dfs } from "../Algo/dfs";
 
 const ROWS = 20;
 const COLS = 46;
@@ -28,6 +29,15 @@ const ParentsComponents = () => {
       return;
     }
     const {visitedNodes,path} = bfs(startNode, targetNode, ROWS , COLS);
+    animateVisited(visitedNodes,path);
+  }
+
+  const runDfs = ()=>{
+    if(!startNode || !targetNode){
+      alert("select start and target");
+      return;
+    }
+    const {visitedNodes, path} = dfs(startNode,targetNode,ROWS, COLS);
     animateVisited(visitedNodes,path);
   }
 
@@ -62,7 +72,7 @@ const animateVisited = (visitedNodes, path) => {
 
   return (
     <>
-      <Home runDijkstra={runDijkstra} runBfs={runBfs}  />
+      <Home runDijkstra={runDijkstra} runBfs={runBfs} runDfs={runDfs}/>
       <Grid
         startNode={startNode}
         setStartNode={setStartNode}
