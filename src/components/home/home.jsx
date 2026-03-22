@@ -1,27 +1,36 @@
-import React from 'react';
-import circle from "../../assets/circle.svg";
-import start from "../../assets/triangletwo-right.svg";
+import React, { useState } from 'react';
 import "./home.css";
 
-const Home = ({ runDijkstra,runBfs,runDfs}) => {
+const Controls = ({ runBfs, runDfs, runDijkstra }) => {
+  const [algo, setAlgo] = useState("");
+  const handleRun = () => {
+    console.log("Selected Algo:", algo);
+    if (algo === "bfs" && runBfs) {
+      runBfs();
+    } else if (algo === "dfs" && runDfs) {
+      runDfs();
+    } else if (algo === "dijkstra" && runDijkstra) {
+      runDijkstra();
+    } else {
+      alert("Algo not selected or function missing");
+    }
+  };
+
   return (
-    <div className='home'>
-      <div className="controls">
-        <button onClick={runDijkstra}>Run Dijkstra</button>
-        <button onClick={runBfs} > Run BFS </button>
-        <button onClick={runDfs} > Run DFS </button>
-      </div>
-      <div className='item'>
-        <img src={circle} alt="" />
-        <h3>Target Node</h3>
-      </div>
-
-      <div className='item'>
-        <img src={start} alt="" />
-        <h3>Start Node</h3>
-      </div>
-
-      <div className='item'>
+    <div className="controls">
+      <select
+        className="drop"
+        onChange={(e) => setAlgo(e.target.value)}
+      >
+        <option value="">Select Algorithm</option>
+        <option value="bfs">BFS</option>
+        <option value="dfs">DFS</option>
+        <option value="dijkstra">Dijkstra</option>
+      </select>
+      <button onClick={handleRun} className="rbtn">
+        Run Algorithm
+      </button>
+       <div className='item'>
         <table className="grid">
           <tbody>
             <tr>
@@ -31,31 +40,28 @@ const Home = ({ runDijkstra,runBfs,runDfs}) => {
         </table>
         <h3>Unvisited Node</h3>
       </div>
-
       <div className='item'>
         <table className="grid">
           <tbody>
             <tr>
-              <td className="unvisited1"></td>
-            </tr>
-          </tbody>
-        </table>
-        <h3>Visited Nodes</h3>
-      </div>
-
-      <div className='item'>
-        <table className="grid">
-          <tbody>
-            <tr>
-              <td className="unvisited3"></td>
+              <td className="shortpath"></td>
             </tr>
           </tbody>
         </table>
         <h3>Shortest-path Node</h3>
       </div>
-
+      <div className='item'>
+        <table className="grid">
+          <tbody>
+            <tr>
+              <td className="visitedpath"></td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Visited Nodes</h3>
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default Controls;

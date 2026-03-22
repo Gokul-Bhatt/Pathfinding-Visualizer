@@ -1,4 +1,4 @@
-.home{
+/* .home{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -9,15 +9,12 @@
     gap: 1rem;
 }
 
-.grid {
-  border-collapse: collapse;
-}
 
-/* .unvisited2 {
+.unvisited2 {
   width: 25px;
   height: 25px;
   background-color: rgb(223, 57, 218);
-} */
+}
 .unvisited1{
   width: 25px;
   height: 25px;
@@ -27,4 +24,56 @@
   width: 25px;
   height: 25px;
   background-color: rgb(255, 234, 0);
+} */
+
+.controls{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.drop{
+  padding: .7rem;
+  border: 1px solid white;
+  border-radius: 2rem;
+  background-color: green;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rbtn{
+  padding: .7rem;
+  border: 1px solid white;
+  border-radius: 2rem;
+  background-color: green;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.rbtn:hover{
+  background-color: rgb(3, 91, 3);
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.grid {
+  border-collapse: collapse;
+}
+
+.shortpath{
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 234, 0);
+}
+.visitedpath{
+  width: 25px;
+  height: 25px;
+  background-color: #2B6CFE;
 }
