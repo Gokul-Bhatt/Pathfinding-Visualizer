@@ -1,24 +1,29 @@
 export const bfs = (start, target, ROWS, COLS) => {
     const directions = [[0,1],[1,0],[0,-1],[-1,0]];
+
     const visited = Array.from({ length: ROWS }, () =>
         Array(COLS).fill(false)
     );
+
     const prev = Array.from({ length: ROWS }, () =>
         Array(COLS).fill(null)
     );
-    const queue = [];
 
-    queue.push(start);
-    visited[start[0]][start[1]] = true;
+    const queue = [];
+    const visitedNodes = [];
+
+    queue.push(start); 
+    visited[start.row][start.col] = true;
 
     while (queue.length) {
-        const [r, c] = queue.shift();
+        const node = queue.shift();
+        visitedNodes.push(node);
 
-        if (r === target[0] && c === target[1]) break;
+        if (node.row === target.row && node.col === target.col) break;
 
-        for (let [dr, dc] of directions) {
-            let nr = r + dr;
-            let nc = c + dc;
+        for (let [dx, dy] of directions) {
+            let nr = node.row + dx;
+            let nc = node.col + dy;
 
             if (
                 nr >= 0 && nc >= 0 &&
@@ -26,19 +31,19 @@ export const bfs = (start, target, ROWS, COLS) => {
                 !visited[nr][nc]
             ) {
                 visited[nr][nc] = true;
-                prev[nr][nc] = [r, c];
-                queue.push([nr, nc]);
+                prev[nr][nc] = node;
+                queue.push({ row: nr, col: nc });
             }
         }
     }
+
     const path = [];
     let curr = target;
 
     while (curr) {
         path.push(curr);
-        curr = prev[curr[0]][curr[1]];
+        curr = prev[curr.row][curr.col];
     }
-    path.reverse();
 
-    return path;
+    return { visitedNodes, path: path.reverse() };
 };

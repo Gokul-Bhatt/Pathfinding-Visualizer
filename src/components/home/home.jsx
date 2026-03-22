@@ -3,11 +3,12 @@ import circle from "../../assets/circle.svg";
 import start from "../../assets/triangletwo-right.svg";
 import "./home.css";
 
-const Home = ({ runDijkstra }) => {
+const Home = ({ runDijkstra,runBfs }) => {
   return (
     <div className='home'>
       <div className="controls">
         <button onClick={runDijkstra}>Run Dijkstra</button>
+        <button onClick={runBfs} > Run BFS </button>
       </div>
       <div className='item'>
         <img src={circle} alt="" />

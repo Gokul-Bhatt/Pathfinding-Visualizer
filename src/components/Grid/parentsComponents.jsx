@@ -30,7 +30,7 @@ const ParentsComponents = () => {
     const {visitedNodes,path} = bfs(startNode, targetNode, ROWS , COLS);
     animateVisited(visitedNodes,path);
   }
-  
+
 const animateVisited = (visitedNodes, path) => {
   visitedNodes.forEach((node, index) => {
     setTimeout(() => {
@@ -62,7 +62,7 @@ const animateVisited = (visitedNodes, path) => {
 
   return (
     <>
-      <Home runDijkstra={runDijkstra} />
+      <Home runDijkstra={runDijkstra} runBfs={runBfs}  />
       <Grid
         startNode={startNode}
         setStartNode={setStartNode}
