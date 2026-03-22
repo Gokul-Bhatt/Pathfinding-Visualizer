@@ -37,10 +37,15 @@
   max-width: 100%;
 }
 
-.shortpath,
+.shortpath{
+  width: 25px;
+  height: 25px;
+  background-color: yellow;
+}
 .visitedpath {
   width: 25px;
   height: 25px;
+  background-color: #5600FF;
 }
 
 
