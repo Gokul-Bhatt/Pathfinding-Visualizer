@@ -1,79 +1,85 @@
-/* .home{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 1rem;
-}
-.item{
-    display: flex;
-    gap: 1rem;
-}
-
-
-.unvisited2 {
-  width: 25px;
-  height: 25px;
-  background-color: rgb(223, 57, 218);
-}
-.unvisited1{
-  width: 25px;
-  height: 25px;
-  background-color: rgb(5, 62, 112);
-}
-.unvisited3{
-  width: 25px;
-  height: 25px;
-  background-color: rgb(255, 234, 0);
-} */
-
-.controls{
+.controls {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;   
 }
 
-.drop{
-  padding: .7rem;
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.drop,
+.rbtn {
+  padding: 0.7rem 1rem;
   border: 1px solid white;
   border-radius: 2rem;
   background-color: green;
   color: white;
   font-weight: 700;
   cursor: pointer;
+  white-space: nowrap;  
+  transition: 0.3s ease;
 }
 
-.rbtn{
-  padding: .7rem;
-  border: 1px solid white;
-  border-radius: 2rem;
-  background-color: green;
-  color: white;
-  font-weight: 700;
-  cursor: pointer;
-}
-.rbtn:hover{
+.rbtn:hover {
   background-color: rgb(3, 91, 3);
 }
 
-.item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
 .grid {
   border-collapse: collapse;
+  max-width: 100%;
 }
 
-.shortpath{
+.shortpath,
+.visitedpath {
   width: 25px;
   height: 25px;
-  background-color: rgb(255, 234, 0);
 }
-.visitedpath{
-  width: 25px;
-  height: 25px;
-  background-color: #2B6CFE;
+
+
+@media (max-width: 768px) {
+  .controls {
+    gap: 0.7rem;
+  }
+
+  .drop,
+  .rbtn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .shortpath,
+  .visitedpath {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .controls {
+    gap: 0.5rem;
+  }
+
+  .item {
+    gap: 0.5rem;
+  }
+
+  .drop,
+  .rbtn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .shortpath,
+  .visitedpath {
+    width: 15px;
+    height: 15px;
+  }
 }
