@@ -7,9 +7,6 @@ const ROWS = 20;
 const COLS = 46;
 
 const Grid = ({startNode,setStartNode,targetNode,setTargetNode}) => {
-  // const [startNode, setStartNode] = useState(null);
-  // const [targetNode, setTargetNode] = useState(null);
-
   const handleCellClick = (row, col) => {
     console.log("CLICKED:", row, col);
     
