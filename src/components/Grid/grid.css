@@ -6,18 +6,10 @@
   padding: 0;
   cursor: pointer;
 }
-
-/* .unvisited {
-  background-color: white;
-} */
-
 .grid {
   border-collapse: collapse;
   margin: 20px auto;
 }
-/* .unvisited {
-  background-color: white;
-} */
 
 .start {
   background-color: #2ecc71;
